@@ -1,14 +1,11 @@
-.circled-border {
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-}
 .corner,
 .corner-t-left,
 .corner-b-left,
 .corner-t-right,
 .corner-b-right {
   position: relative;
+  border: 1px solid #cccccc;
+  padding: 0 12px;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -45,4 +42,34 @@
   right: 0;
   border-left: 10px solid transparent !important;
   border-bottom: 10px solid #cccccc;
+}
+.corner-primary {
+  border-color: #428bca;
+}
+.corner-primary:before {
+  border-color: #428bca;
+}
+.corner-success {
+  border-color: #5cb85c;
+}
+.corner-success:before {
+  border-color: #5cb85c;
+}
+.corner-info {
+  border-color: #5bc0de;
+}
+.corner-info:before {
+  border-color: #5bc0de;
+}
+.corner-warning {
+  border-color: #f0ad4e;
+}
+.corner-warning:before {
+  border-color: #f0ad4e;
+}
+.corner-danger {
+  border-color: #d9534f;
+}
+.corner-danger:before {
+  border-color: #d9534f;
 }

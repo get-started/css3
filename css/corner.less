@@ -1,50 +1,75 @@
 @import "mixins/library";
 
-@size: 10px;
-@margin: 1px;
-@color: #ccc;
-.corner {
-  position: relative;
-  .border-box;
-  &:before {
-    content: '';
-    position: absolute;
-    margin: @margin;
+.make-corner() {
+  @size: 10px;
+  @margin: 1px;
+  @color: #ccc;
+  @transparent-border: @size solid transparent !important;
+  @corner-border: @size solid @color;
+
+  .corner {
+    position: relative;
+    border: 1px solid @color;
+    padding:0 @size+2*@margin;
+    .border-box;
+    &:before {
+      content: '';
+      position: absolute;
+      margin: @margin;
+    }
   }
+
+  .corner-t-left:extend(.corner all) {
+    &:before {
+      left: 0;
+      top: 0;
+      border-right: @transparent-border;
+      border-top: @corner-border;
+    }
+  }
+
+  .corner-b-left:extend(.corner all) {
+    &:before {
+      left: 0;
+      bottom: 0;
+      border-right: @transparent-border;
+      border-bottom: @corner-border;
+    }
+  }
+
+  .corner-t-right:extend(.corner all) {
+    &:before {
+      top: 0;
+      right: 0;
+      border-left: @transparent-border;
+      border-top: @corner-border;
+    }
+  }
+
+  .corner-b-right:extend(.corner all) {
+    &:before {
+      bottom: 0;
+      right: 0;
+      border-left: @transparent-border;
+      border-bottom: @corner-border;
+    }
+  }
+
+  //add skins for the corner
+  .make-skin(@type,@color) {
+    .corner-@{type} {
+      border-color: @color;
+      &:before {
+        border-color: @color;
+      }
+    }
+  }
+
+  .make-skin(primary, #428bca);
+  .make-skin(success, #5cb85c);
+  .make-skin(info, #5bc0de);
+  .make-skin(warning, #f0ad4e);
+  .make-skin(danger, #d9534f);
 }
 
-.corner-t-left:extend(.corner all) {
-  &:before {
-    left: 0;
-    top: 0;
-    border-right: @size solid transparent !important;
-    border-top: @size solid @color;
-  }
-}
-
-.corner-b-left:extend(.corner all) {
-  &:before {
-    left: 0;
-    bottom: 0;
-    border-right: @size solid transparent !important;
-    border-bottom: @size solid @color;
-  }
-}
-
-.corner-t-right:extend(.corner all) {
-  &:before {
-    top: 0;
-    right: 0;
-    border-left: @size solid transparent !important;
-    border-top: @size solid @color;
-  }
-}
-
-.corner-b-right:extend(.corner all) {
-  &:before {
-    bottom: 0;
-    right: 0;
-    border-left: @size solid transparent !important;
-    border-bottom: @size solid @color;
-  }
-}
+.make-corner();
