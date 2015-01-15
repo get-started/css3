@@ -1,0 +1,19 @@
+@import 'mixins/library';
+
+.avatar {
+  @size: 120px;
+  @border_size: 2px;
+  .size(@size);
+  .border-box;
+  position: relative;
+  overflow: hidden;
+  border: @border_size solid #fff;
+  .box-shadow(0 0 0 @border_size #eee);
+}
+
+.avatar-circle:extend(.avatar all) {
+  .circled-border;
+}
+.avatar-rounded:extend(.avatar all) {
+  .border-radius(5px);
+}

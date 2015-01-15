@@ -1,0 +1,31 @@
+.circled-border {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+.avatar,
+.avatar-circle,
+.avatar-rounded {
+  width: 120px;
+  height: 120px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px #eeeeee;
+  -moz-box-shadow: 0 0 0 2px #eeeeee;
+  -webkit-box-shadow: 0 0 0 2px #eeeeee;
+  -o-box-shadow: 0 0 0 2px #eeeeee;
+}
+.avatar-circle {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+.avatar-rounded {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
