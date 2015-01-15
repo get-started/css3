@@ -1,0 +1,28 @@
+@import 'mixins/box-sizing';
+.mask {
+  @border-size: 8px;
+  @border-color: #fff;
+  @left:25px;
+  height: @border-size;
+  width:100%;
+  position: absolute;
+  overflow: hidden;
+  &:before, &:after {
+    content: ' ';
+    height: 100%;
+    position:absolute;
+    .box-sizing(border-box);
+  }
+  &:before{
+    width:@left;
+    border-right:@border-size solid transparent;
+    border-top:@border-size solid @border-color;
+  }
+  &:after{
+    margin-left:@left;
+    width:100%;
+    border-left:@border-size/2 solid transparent;
+    border-top:@border-size solid @border-color;
+  }
+
+}

@@ -1,0 +1,26 @@
+.mask {
+  height: 8px;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+.mask:before,
+.mask:after {
+  content: ' ';
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.mask:before {
+  width: 25px;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #ffffff;
+}
+.mask:after {
+  margin-left: 25px;
+  width: 100%;
+  border-left: 4px solid transparent;
+  border-top: 8px solid #ffffff;
+}
