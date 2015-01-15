@@ -1,0 +1,32 @@
+@import "mixins/library";
+
+.caret(@type,@size:4px) {
+  .caret-@{type} {
+
+    .size(0);
+    .border-box;
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+    border: @size solid transparent;
+    border-@{type}: 0;
+
+    & when (@type=top) {
+      border-bottom: @size solid;
+    }
+    & when (@type=bottom) {
+      border-top: @size solid;
+    }
+    & when (@type=left) {
+      border-right: @size solid;
+    }
+    & when (@type=right) {
+      border-left: @size solid;
+    }
+  }
+}
+
+.caret(bottom);
+.caret(top);
+.caret(left);
+.caret(right);
